@@ -264,6 +264,34 @@ func (dev *DaggerDev) Dev(
 		WithWorkdir("/mnt"), nil
 }
 
+func (dev *DaggerDev) WithDev(
+	ctx context.Context,
+	// Set target distro
+	// +optional
+	image *Distro,
+	// Enable experimental GPU support
+	// +optional
+	gpuSupport bool,
+) (string, error) {
+	svc, err := dev.Engine().Service(ctx, "", image, gpuSupport)
+	if err != nil {
+		return "", err
+	}
+	endpoint, err := svc.Endpoint(ctx, dagger.ServiceEndpointOpts{Scheme: "tcp"})
+	if err != nil {
+		return "", err
+	}
+
+	_, err = svc.Start(ctx)
+	if err != nil {
+		return "", err
+	}
+
+	return fmt.Sprintf(
+		"export _EXPERIMENTAL_DAGGER_RUNNER_HOST=%s",
+		endpoint), nil
+}
+
 // Creates an static dev build
 func (dev *DaggerDev) DevExport(
 	ctx context.Context,

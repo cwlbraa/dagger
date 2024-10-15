@@ -3,10 +3,18 @@
 set -e -u
 
 export DAGGER_SRC_ROOT="$(cd $(dirname $(realpath "${BASH_SOURCE[0]}"))/.. && pwd)"
-export MAGEDIR="$DAGGER_SRC_ROOT/.dagger/mage"
+export DAGGER_BIN_DIR=$DAGGER_SRC_ROOT/bin
+export DAGGER_BIN=$DAGGER_BIN_DIR/dagger
 
-pushd $MAGEDIR
-eval $(go run main.go -w $DAGGER_SRC_ROOT engine:dev)
-popd
+pushd $DAGGER_SRC_ROOT >/dev/null
+go build -o $DAGGER_BIN $DAGGER_SRC_ROOT/cmd/dagger/
+# dagger call cli binary --platform=$(go env GOOS) export --path="$DAGGER_BIN"
+export _EXPERIMENTAL_DAGGER_CLI_BIN="$DAGGER_BIN"
+export PATH="$DAGGER_BIN_DIR:$PATH"
+
+# eval $(dagger call with-dev)
+dagger call engine service --name dagger-engine up
+export _EXPERIMENTAL_DAGGER_RUNNER_HOST=tcp://0.0.0.0:1234
+popd >/dev/null
 
 exec "$@"
