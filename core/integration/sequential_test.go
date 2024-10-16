@@ -34,20 +34,20 @@ func (SequentialSuite) TestInsecureRootNetNSIsolation(ctx context.Context, t *te
 		WithExec([]string{"apk", "add", "iputils", "iptables"}).
 		WithEnvVariable("CACHE_BUST", uuid.NewString())
 
-	listNATRules := func(ctr *dagger.Container) *dagger.Container {
-		return ctr.WithExec([]string{"sh", "-c", "iptables -t nat -L -v -n"}, opts)
+	listNATRules := func(ctr *dagger.Container) (string, error) {
+		return ctr.
+			WithExec([]string{"sh", "-c", "iptables -t nat -L -v -n"}, opts).
+			Stdout(ctx)
 	}
 
 	withRules, err := listNATRules(baseContainer.WithExec([]string{
-		// Add rule 1
 		"sh", "-c", "iptables -t nat -A PREROUTING -p tcp -j DNAT --to-destination 127.0.0.1",
 	}, opts).WithExec([]string{
-		// Add rule 2
 		"sh", "-c", "iptables -t nat -A POSTROUTING -p tcp -j MASQUERADE",
-	}, opts)).Stdout(ctx)
+	}, opts))
 	require.NoError(t, err)
 
-	withoutRules, err := listNATRules(baseContainer).Stdout(ctx)
+	withoutRules, err := listNATRules(baseContainer)
 	require.NoError(t, err)
 
 	require.NotEqual(t, withRules, withoutRules)
