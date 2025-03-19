@@ -140,16 +140,16 @@ func (LLMSuite) TestAPILimit(ctx context.Context, t *testctx.T) {
 		}
 		err = os.WriteFile(recording, []byte(out), 0644)
 		require.NoError(t, err)
-	} else {
-		replayData, err := os.ReadFile(recording)
-		require.NoError(t, err)
-		llmFlags := fmt.Sprintf("--max-api-calls=1 --model=\"replay/%s\"", base64.StdEncoding.EncodeToString(replayData))
-
-		_, err = daggerCliBase(t, c).
-			With(ctrFn(llmFlags)).
-			Stdout(ctx)
-		requireErrOut(t, err, "reached API call limit: 1")
 	}
+
+	replayData, err := os.ReadFile(recording)
+	require.NoError(t, err)
+	llmFlags := fmt.Sprintf("--max-api-calls=1 --model=\"replay/%s\"", base64.StdEncoding.EncodeToString(replayData))
+
+	_, err = daggerCliBase(t, c).
+		With(ctrFn(llmFlags)).
+		Stdout(ctx)
+	requireErrOut(t, err, "reached API call limit: 1")
 }
 
 func (LLMSuite) TestAllowLLM(ctx context.Context, t *testctx.T) {
@@ -158,8 +158,7 @@ func (LLMSuite) TestAllowLLM(ctx context.Context, t *testctx.T) {
 	directCallModuleRef := "github.com/cwlbraa/dagger-test-modules/llm-dir-module-depender/llm-test-module"
 
 	ctrFn := func(llmFlags string) dagger.WithContainerFunc {
-		// return daggerCall("-m", directCallModuleRef, "--allow-llm=all", "save", "--string-arg", "greet me")
-		return daggerShellAllowAllLLM(fmt.Sprintf(`%s | save wat`, directCallModuleRef))
+		return daggerCall("-m", directCallModuleRef, "--allow-llm=all", "save", "--string-arg", "greet me")
 	}
 
 	recording := "llmtest/allow-llm.golden"
