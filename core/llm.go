@@ -671,7 +671,7 @@ func (llm *LLM) allowed(ctx context.Context) error {
 		return fmt.Errorf("llm sync failed fetching client metadata from context: %w", err)
 	}
 
-	moduleUrl := module.Source.Self.Git.CloneRef
+	moduleUrl := module.Source.Self.Git.Symbolic
 	for _, allowedModule := range md.AllowedLLMModules {
 		if allowedModule == "all" || moduleUrl == allowedModule {
 			return nil
