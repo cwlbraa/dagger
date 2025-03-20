@@ -14,7 +14,6 @@ import (
 	"dagger.io/dagger"
 	"dagger.io/dagger/dag"
 	"github.com/dagger/testctx"
-	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
 	"gotest.tools/v3/golden"
 )
@@ -181,36 +180,35 @@ func (LLMSuite) TestAllowLLM(ctx context.Context, t *testctx.T) {
 
 	t.Run("direct allow all", func(ctx context.Context, t *testctx.T) {
 		_, err = daggerCliBase(t, c).
-			WithEnvVariable("CACHE_BUSTER", uuid.NewString()).
-			With(daggerCall("-m", directCallModuleRef, "--allow-llm=all", modelFlag, "save", "--string-arg", "greet me")).
+			With(daggerCallAt(directCallModuleRef, "--allow-llm=all", modelFlag, "save", "--string-arg", "greet me")).
 			Stdout(ctx)
 		require.NoError(t, err)
 	})
 
 	t.Run("direct allow specific module", func(ctx context.Context, t *testctx.T) {
 		_, err = daggerCliBase(t, c).
-			WithEnvVariable("CACHE_BUSTER", uuid.NewString()).
-			With(daggerCall("-m", directCallModuleRef, "--allow-llm", directCallModuleRef, modelFlag, "save", "--string-arg", "greet me")).
+			With(daggerCallAt(directCallModuleRef, "--allow-llm", directCallModuleRef, modelFlag, "save", "--string-arg", "greet me")).
 			Stdout(ctx)
 		require.NoError(t, err)
 	})
 
 	t.Run("depender allow all", func(ctx context.Context, t *testctx.T) {
 		_, err = daggerCliBase(t, c).
-			WithEnvVariable("CACHE_BUSTER", uuid.NewString()).
-			With(daggerCall("-m", dependerModuleRef, "--allow-llm=all", modelFlag, "save", "--string-arg", "greet me")).
+			With(daggerCallAt(dependerModuleRef, "--allow-llm=all", modelFlag, "save", "--string-arg", "greet me")).
 			Stdout(ctx)
 		require.NoError(t, err)
 	})
 
 	t.Run("depender allow specific module", func(ctx context.Context, t *testctx.T) {
 		_, err = daggerCliBase(t, c).
-			WithEnvVariable("CACHE_BUSTER", uuid.NewString()).
-			// With(daggerCall("-m", dependerModuleRef, "--allow-llm", directCallModuleRef, modelFlag, "save", "--string-arg", "greet me")).
-			With(daggerCall("-m", dependerModuleRef, modelFlag, "save", "--string-arg", "greet me")). // this succeeds incorrectly right now
+			With(daggerCallAt(dependerModuleRef, "--allow-llm", directCallModuleRef, modelFlag, "save", "--string-arg", "greet me")).
 			Stdout(ctx)
 		require.NoError(t, err)
 	})
+}
+
+func (LLMSuite) TestPromptAllowLLM(ctx context.Context, t *testctx.T) {
+	t.Skip("TODO: these need to use a host CLI so we can futz with TTYs")
 }
 
 func testGoProgram(ctx context.Context, t *testctx.T, c *dagger.Client, program *dagger.File, re any) {
