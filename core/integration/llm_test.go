@@ -205,6 +205,36 @@ func (LLMSuite) TestAllowLLM(ctx context.Context, t *testctx.T) {
 			Stdout(ctx)
 		require.NoError(t, err)
 	})
+
+	t.Run("shell allow all", func(ctx context.Context, t *testctx.T) {
+		_, err = daggerCliBase(t, c).
+			WithExec([]string{"dagger", "-m", dependerModuleRef, "--allow-llm=all"}, dagger.ContainerWithExecOpts{
+				Stdin:                         fmt.Sprintf(`. %s | save "greet me"`, modelFlag),
+				ExperimentalPrivilegedNesting: true,
+			}).
+			Stdout(ctx)
+		require.NoError(t, err)
+	})
+
+	t.Run("shell interactive module loads", func(ctx context.Context, t *testctx.T) {
+		_, err = daggerCliBase(t, c).
+			WithExec([]string{"dagger", "--allow-llm", directCallModuleRef}, dagger.ContainerWithExecOpts{
+				Stdin:                         fmt.Sprintf(`%s %s | save "greet me"`, dependerModuleRef, modelFlag),
+				ExperimentalPrivilegedNesting: true,
+			}).
+			Stdout(ctx)
+		require.NoError(t, err)
+	})
+
+	// // TODO, not yet implemented
+	// t.Run("environment variable", func(ctx context.Context, t *testctx.T) {
+	// 	_, err = daggerCliBase(t, c).
+	// 		WithEnvVariable("DAGGER_ALLOW_LLM", "all").
+	// 		With(daggerCallAt(dependerModuleRef, modelFlag, "save", "--string-arg", "greet me")).
+	// 		Stdout(ctx)
+	// 	require.NoError(t, err)
+	// })
+
 }
 
 func (LLMSuite) TestPromptAllowLLM(ctx context.Context, t *testctx.T) {
