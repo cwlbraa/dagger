@@ -30,6 +30,8 @@ type Env struct {
 	root dagql.Object
 	// The env supports declaring new outputs.
 	writable bool
+	// Initial selection for LLM
+	selection dagql.Object
 }
 
 func (*Env) Type() *ast.Type {
@@ -433,6 +435,12 @@ func (s EnvHook) ExtendEnvType(targetType dagql.ObjectType) error {
 					Description: "The purpose of the input",
 					Type:        dagql.NewString(""),
 				},
+				{
+					Name:        "select",
+					Description: "Select this input to scope the available tools to this input's functions. More recent select inputs will override.",
+					Type:        dagql.NewBoolean(false),
+					Default:     dagql.NewBoolean(false),
+				},
 			},
 		},
 		func(ctx context.Context, self dagql.Object, args map[string]dagql.Input) (dagql.Typed, error) {
@@ -444,6 +452,12 @@ func (s EnvHook) ExtendEnvType(targetType dagql.ObjectType) error {
 			if err != nil {
 				return nil, err
 			}
+
+			_select := args["select"].(dagql.Boolean).Bool()
+			if _select {
+				env.selection = obj
+			}
+
 			return env.WithInput(name, obj, description), nil
 		},
 		dagql.CacheSpec{},
