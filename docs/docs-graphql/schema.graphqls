@@ -1718,7 +1718,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired CacheVolume output to be assigned in the environment"""
@@ -1744,7 +1744,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired Container output to be assigned in the environment"""
@@ -1770,7 +1770,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired Directory output to be assigned in the environment"""
@@ -1796,7 +1796,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired Env output to be assigned in the environment"""
@@ -1822,7 +1822,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired File output to be assigned in the environment"""
@@ -1848,7 +1848,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired GitRef output to be assigned in the environment"""
@@ -1874,7 +1874,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """
@@ -1902,7 +1902,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired LLM output to be assigned in the environment"""
@@ -1930,7 +1930,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """
@@ -1958,7 +1958,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired Module output to be assigned in the environment"""
@@ -1984,7 +1984,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """
@@ -2012,7 +2012,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired Secret output to be assigned in the environment"""
@@ -2038,7 +2038,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired Service output to be assigned in the environment"""
@@ -2064,7 +2064,7 @@ type Env {
     """
     Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     """
-    select: Boolean! = false
+    selection: Boolean! = false
   ): Env!
 
   """Declare a desired Socket output to be assigned in the environment"""

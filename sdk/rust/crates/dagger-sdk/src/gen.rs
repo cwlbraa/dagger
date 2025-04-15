@@ -5290,13 +5290,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The CacheVolume value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_cache_volume_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<CacheVolumeId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withCacheVolumeInput");
         query = query.arg("name", name.into());
@@ -5308,7 +5308,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5342,13 +5342,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Container value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_container_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<ContainerId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withContainerInput");
         query = query.arg("name", name.into());
@@ -5360,7 +5360,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5394,13 +5394,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Directory value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_directory_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<DirectoryId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withDirectoryInput");
         query = query.arg("name", name.into());
@@ -5412,7 +5412,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5446,13 +5446,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Env value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_env_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<EnvId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withEnvInput");
         query = query.arg("name", name.into());
@@ -5464,7 +5464,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5494,13 +5494,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The File value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_file_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<FileId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withFileInput");
         query = query.arg("name", name.into());
@@ -5512,7 +5512,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5542,13 +5542,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The GitRef value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_git_ref_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<GitRefId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withGitRefInput");
         query = query.arg("name", name.into());
@@ -5560,7 +5560,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5594,13 +5594,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The GitRepository value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_git_repository_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<GitRepositoryId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withGitRepositoryInput");
         query = query.arg("name", name.into());
@@ -5612,7 +5612,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5646,13 +5646,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The LLM value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_llm_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<Llmid>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withLLMInput");
         query = query.arg("name", name.into());
@@ -5664,7 +5664,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5694,13 +5694,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The ModuleConfigClient value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_module_config_client_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<ModuleConfigClientId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withModuleConfigClientInput");
         query = query.arg("name", name.into());
@@ -5712,7 +5712,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5746,13 +5746,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Module value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_module_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<ModuleId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withModuleInput");
         query = query.arg("name", name.into());
@@ -5764,7 +5764,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5798,13 +5798,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The ModuleSource value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_module_source_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<ModuleSourceId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withModuleSourceInput");
         query = query.arg("name", name.into());
@@ -5816,7 +5816,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5850,13 +5850,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Secret value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_secret_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<SecretId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withSecretInput");
         query = query.arg("name", name.into());
@@ -5868,7 +5868,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5902,13 +5902,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Service value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_service_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<ServiceId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withServiceInput");
         query = query.arg("name", name.into());
@@ -5920,7 +5920,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,
@@ -5954,13 +5954,13 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Socket value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `select` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
     pub fn with_socket_input(
         &self,
         name: impl Into<String>,
         value: impl IntoID<SocketId>,
         description: impl Into<String>,
-        select: bool,
+        selection: bool,
     ) -> Env {
         let mut query = self.selection.select("withSocketInput");
         query = query.arg("name", name.into());
@@ -5972,7 +5972,7 @@ impl Env {
             }),
         );
         query = query.arg("description", description.into());
-        query = query.arg("select", select);
+        query = query.arg("selection", selection);
         Env {
             proc: self.proc.clone(),
             selection: query,

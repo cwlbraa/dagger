@@ -436,7 +436,7 @@ func (s EnvHook) ExtendEnvType(targetType dagql.ObjectType) error {
 					Type:        dagql.NewString(""),
 				},
 				{
-					Name:        "select",
+					Name:        "selection",
 					Description: "Select this input to scope the available tools to this input's functions. More recent select inputs will override.",
 					Type:        dagql.NewBoolean(false),
 					Default:     dagql.NewBoolean(false),
@@ -453,8 +453,8 @@ func (s EnvHook) ExtendEnvType(targetType dagql.ObjectType) error {
 				return nil, err
 			}
 
-			_select := args["select"].(dagql.Boolean).Bool()
-			if _select {
+			selection := args["selection"].(dagql.Boolean).Bool()
+			if selection {
 				env.selection = obj
 			}
 

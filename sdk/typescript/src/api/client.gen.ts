@@ -844,98 +844,98 @@ export type EnvWithCacheVolumeInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithContainerInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithDirectoryInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithEnvInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithFileInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithGitRefInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithGitRepositoryInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithLlminputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithModuleConfigClientInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithModuleInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithModuleSourceInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithSecretInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithServiceInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 export type EnvWithSocketInputOpts = {
   /**
    * Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
-  select: boolean
+  selection: boolean
 }
 
 /**
@@ -4064,7 +4064,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The CacheVolume value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withCacheVolumeInput = (
     name: string,
@@ -4096,7 +4096,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The Container value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withContainerInput = (
     name: string,
@@ -4128,7 +4128,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The Directory value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withDirectoryInput = (
     name: string,
@@ -4160,7 +4160,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The Env value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withEnvInput = (
     name: string,
@@ -4192,7 +4192,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The File value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withFileInput = (
     name: string,
@@ -4224,7 +4224,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The GitRef value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withGitRefInput = (
     name: string,
@@ -4256,7 +4256,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The GitRepository value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withGitRepositoryInput = (
     name: string,
@@ -4291,7 +4291,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The LLM value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withLLMInput = (
     name: string,
@@ -4323,7 +4323,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The ModuleConfigClient value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withModuleConfigClientInput = (
     name: string,
@@ -4358,7 +4358,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The Module value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withModuleInput = (
     name: string,
@@ -4390,7 +4390,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The ModuleSource value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withModuleSourceInput = (
     name: string,
@@ -4425,7 +4425,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The Secret value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withSecretInput = (
     name: string,
@@ -4457,7 +4457,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The Service value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withServiceInput = (
     name: string,
@@ -4489,7 +4489,7 @@ export class Env extends BaseClient {
    * @param name The name of the binding
    * @param value The Socket value to assign to the binding
    * @param description The purpose of the input
-   * @param opts.select Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+   * @param opts.selection Select this input to scope the available tools to this input's functions. More recent select inputs will override.
    */
   withSocketInput = (
     name: string,

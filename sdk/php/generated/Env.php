@@ -64,14 +64,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         CacheVolumeId|CacheVolume $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withCacheVolumeInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -94,14 +94,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         ContainerId|Container $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withContainerInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -124,14 +124,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         DirectoryId|Directory $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withDirectoryInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -150,14 +150,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
     /**
      * Create or update a binding of type Env in the environment
      */
-    public function withEnvInput(string $name, EnvId|Env $value, string $description, ?bool $select = false): Env
+    public function withEnvInput(string $name, EnvId|Env $value, string $description, ?bool $selection = false): Env
     {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withEnvInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -176,14 +176,18 @@ class Env extends Client\AbstractObject implements Client\IdAble
     /**
      * Create or update a binding of type File in the environment
      */
-    public function withFileInput(string $name, FileId|File $value, string $description, ?bool $select = false): Env
-    {
+    public function withFileInput(
+        string $name,
+        FileId|File $value,
+        string $description,
+        ?bool $selection = false,
+    ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withFileInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -206,14 +210,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         GitRefId|GitRef $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withGitRefInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -236,14 +240,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         GitRepositoryId|GitRepository $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withGitRepositoryInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -262,14 +266,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
     /**
      * Create or update a binding of type LLM in the environment
      */
-    public function withLLMInput(string $name, LLMId|LLM $value, string $description, ?bool $select = false): Env
+    public function withLLMInput(string $name, LLMId|LLM $value, string $description, ?bool $selection = false): Env
     {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withLLMInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -292,14 +296,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         ModuleConfigClientId|ModuleConfigClient $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withModuleConfigClientInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -322,14 +326,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         ModuleId|Module $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withModuleInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -352,14 +356,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         ModuleSourceId|ModuleSource $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withModuleSourceInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -382,14 +386,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         SecretId|Secret $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withSecretInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -412,14 +416,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         ServiceId|Service $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withServiceInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }
@@ -442,14 +446,14 @@ class Env extends Client\AbstractObject implements Client\IdAble
         string $name,
         SocketId|Socket $value,
         string $description,
-        ?bool $select = false,
+        ?bool $selection = false,
     ): Env {
         $innerQueryBuilder = new \Dagger\Client\QueryBuilder('withSocketInput');
         $innerQueryBuilder->setArgument('name', $name);
         $innerQueryBuilder->setArgument('value', $value);
         $innerQueryBuilder->setArgument('description', $description);
-        if (null !== $select) {
-        $innerQueryBuilder->setArgument('select', $select);
+        if (null !== $selection) {
+        $innerQueryBuilder->setArgument('selection', $selection);
         }
         return new \Dagger\Env($this->client, $this->queryBuilderChain->chain($innerQueryBuilder));
     }

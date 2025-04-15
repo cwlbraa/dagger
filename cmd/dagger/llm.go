@@ -124,7 +124,7 @@ func (s *LLMSession) reset() {
 			Arg("name", modName).
 			Arg("description", def.MainObject.Description()).
 			Arg("value", modID).
-			Arg("select", true)
+			Arg("selection", true)
 	}
 
 	s.llm = s.dag.LLM(dagger.LLMOpts{Model: s.model}).
