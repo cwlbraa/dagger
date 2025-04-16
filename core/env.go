@@ -437,7 +437,7 @@ func (s EnvHook) ExtendEnvType(targetType dagql.ObjectType) error {
 				},
 				{
 					Name:        "selection",
-					Description: "Select this input to scope the available tools to this input's functions. More recent select inputs will override.",
+					Description: fmt.Sprintf("Select this input to scope the available tools to functions of %s. More recent select inputs will override.", typeName),
 					Type:        dagql.NewBoolean(false),
 					Default:     dagql.NewBoolean(false),
 				},

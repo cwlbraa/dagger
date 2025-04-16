@@ -1716,7 +1716,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of CacheVolume. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1742,7 +1742,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of Container. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1768,7 +1768,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of Directory. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1794,7 +1794,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of Env. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1820,7 +1820,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of File. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1846,7 +1846,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of GitRef. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1872,7 +1872,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of GitRepository. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1900,7 +1900,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of LLM. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1928,7 +1928,8 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of
+    ModuleConfigClient. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1956,7 +1957,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of Module. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -1982,7 +1983,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of ModuleSource. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -2010,7 +2011,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of Secret. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -2036,7 +2037,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of Service. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!
@@ -2062,7 +2063,7 @@ type Env {
     description: String!
 
     """
-    Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    Select this input to scope the available tools to functions of Socket. More recent select inputs will override.
     """
     selection: Boolean! = false
   ): Env!

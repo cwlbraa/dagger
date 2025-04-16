@@ -5290,7 +5290,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The CacheVolume value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of CacheVolume. More recent select inputs will override.
     pub fn with_cache_volume_input(
         &self,
         name: impl Into<String>,
@@ -5342,7 +5342,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Container value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of Container. More recent select inputs will override.
     pub fn with_container_input(
         &self,
         name: impl Into<String>,
@@ -5394,7 +5394,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Directory value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of Directory. More recent select inputs will override.
     pub fn with_directory_input(
         &self,
         name: impl Into<String>,
@@ -5446,7 +5446,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Env value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of Env. More recent select inputs will override.
     pub fn with_env_input(
         &self,
         name: impl Into<String>,
@@ -5494,7 +5494,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The File value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of File. More recent select inputs will override.
     pub fn with_file_input(
         &self,
         name: impl Into<String>,
@@ -5542,7 +5542,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The GitRef value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of GitRef. More recent select inputs will override.
     pub fn with_git_ref_input(
         &self,
         name: impl Into<String>,
@@ -5594,7 +5594,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The GitRepository value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of GitRepository. More recent select inputs will override.
     pub fn with_git_repository_input(
         &self,
         name: impl Into<String>,
@@ -5646,7 +5646,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The LLM value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of LLM. More recent select inputs will override.
     pub fn with_llm_input(
         &self,
         name: impl Into<String>,
@@ -5694,7 +5694,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The ModuleConfigClient value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of ModuleConfigClient. More recent select inputs will override.
     pub fn with_module_config_client_input(
         &self,
         name: impl Into<String>,
@@ -5746,7 +5746,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Module value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of Module. More recent select inputs will override.
     pub fn with_module_input(
         &self,
         name: impl Into<String>,
@@ -5798,7 +5798,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The ModuleSource value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of ModuleSource. More recent select inputs will override.
     pub fn with_module_source_input(
         &self,
         name: impl Into<String>,
@@ -5850,7 +5850,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Secret value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of Secret. More recent select inputs will override.
     pub fn with_secret_input(
         &self,
         name: impl Into<String>,
@@ -5902,7 +5902,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Service value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of Service. More recent select inputs will override.
     pub fn with_service_input(
         &self,
         name: impl Into<String>,
@@ -5954,7 +5954,7 @@ impl Env {
     /// * `name` - The name of the binding
     /// * `value` - The Socket value to assign to the binding
     /// * `description` - The purpose of the input
-    /// * `selection` - Select this input to scope the available tools to this input's functions. More recent select inputs will override.
+    /// * `selection` - Select this input to scope the available tools to functions of Socket. More recent select inputs will override.
     pub fn with_socket_input(
         &self,
         name: impl Into<String>,
