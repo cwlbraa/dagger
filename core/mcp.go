@@ -58,7 +58,7 @@ func newMCP(env *Env) *MCP {
 		env:           env,
 		selectedTools: map[string]bool{},
 	}
-	// TODO: handle select?
+	// todo: use env.selection to set selectedTools using MCP.typeTools?
 }
 
 //go:embed llm_dagger_prompt.md
